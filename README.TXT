@@ -17,3 +17,9 @@
 31. When you try to look up a value that doesnt exist nothing gets printed
 
 32. If you want to print all keys stored in the map you need to print the phoneBook
+
+34. Both are collections and they both have a sort of order but the hashSet is a orfer that it's possibe for the order to no be consistent
+
+35. The difference is the order an array list the order is presercer while in the Hash set it can vary
+
+36. It will call the pickDefaultResponse(); method
