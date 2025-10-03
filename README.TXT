@@ -14,5 +14,6 @@
 
 29. When you add an entry to a map with two different keys it will be added as a new entry
 
+31. When you try to look up a value that doesnt exist nothing gets printed
 
-
+32. If you want to print all keys stored in the map you need to print the phoneBook

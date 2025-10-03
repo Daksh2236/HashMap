@@ -40,9 +40,10 @@ public class MapTester
         {
             System.out.println(name);
         }
-        else
-        {
-            System.out.println("key is not contained in map");
-        }
+    }
+    
+    public void allKeys()
+    {
+        System.out.println(phoneBook);
     }
 }
