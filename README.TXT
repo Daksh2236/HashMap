@@ -1,12 +1,17 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all they need to know. The comments should usually include at least:
-------------------------------------------------------------------------
+24. The purpose of the HashMap is to store and retreive data with the key-values pairs
+    meaning you can look up a value based on it's name or the other way around
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+25. get(Object key)    
+    put(K key, V value)
+    values()
+    entrySet()
+    keySet()
+    Yes i think that the same type can be used for both it parameters 
+    
+26. to check how many entries are in the map you need to use the size(); method
+
+
+
+
+
+
