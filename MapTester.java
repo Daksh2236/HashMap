@@ -32,5 +32,17 @@ public class MapTester
         public String lookupNumber(String name)
     {
         return phoneBook.get(name);
-    }      
+    }   
+    
+    public void checkKey(String name)
+    {
+        if(phoneBook.containsKey(name))
+        {
+            System.out.println(name);
+        }
+        else
+        {
+            System.out.println("key is not contained in map");
+        }
+    }
 }
