@@ -10,8 +10,9 @@
     
 26. to check how many entries are in the map you need to use the size(); method
 
+28. When you add an entry to a map with a key that already exist it will replace the last value
 
-
+29. When you add an entry to a map with two different keys it will be added as a new entry
 
 
 
