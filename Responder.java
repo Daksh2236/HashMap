@@ -1,11 +1,13 @@
 import java.util.HashMap;
+import java.util.HashSet;
+
 /**
  * Write a description of class Responder here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Responder
+public class Responder 
 {
     // instance variables - replace the example below with your own
     private HashMap<String, String> responseMap;
@@ -39,17 +41,14 @@ public class Responder
         return "pick a valid key";
     }
     
-        public String generateResponse(String word)
-    {
-     String response = responseMap.get(word);
-     if(response != null) 
-     {
-         return response;
-     }
-     else 
-     {
-         return pickDefaultResponse();
-     }
+    public String generateResponse(HashSet<String> words) {
+        for (String word : words) {
+            if (responseMap.containsKey(word)) {
+                return responseMap.get(word);
+            }
+        }
+        // None of the words recognized: return a random default response
+        return pickDefaultResponse();
     }
     
 }
