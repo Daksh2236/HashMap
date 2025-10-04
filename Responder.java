@@ -1,6 +1,7 @@
 import java.util.HashMap;
 import java.util.HashSet;
-
+import java.util.Random;
+import java.util.ArrayList;
 /**
  * Write a description of class Responder here.
  *
@@ -11,14 +12,19 @@ public class Responder
 {
     // instance variables - replace the example below with your own
     private HashMap<String, String> responseMap;
-
+     private String lastDefaultResponse;
+     private Random randomGenerator;
+    private ArrayList<String> defaultResponses;
      /**
          * Constructor for objects of class Responder
          */
     public Responder()
     {
         responseMap = new HashMap<>();
+        randomGenerator = new Random();
         fillResponseMap();
+        fillDefaultResponses();
+        lastDefaultResponse = "";
     }
 
     /**
@@ -37,10 +43,14 @@ public class Responder
     
     public String pickDefaultResponse()
         {
-    
-            //System.out.println("pick a valid key");
-            return "please explain further";
+            String response = lastDefaultResponse;
+            while (response.equals(lastDefaultResponse)) {
+        int index = randomGenerator.nextInt(defaultResponses.size());
+        response = defaultResponses.get(index);
         }
+        lastDefaultResponse = response;
+        return response;
+    }
     
     public String generateResponse(HashSet<String> words) {
         for (String word : words) {
@@ -50,6 +60,14 @@ public class Responder
         }
         // None of the words recognized: return a random default response
         return pickDefaultResponse();
+    }
+    
+    private void fillDefaultResponses()
+    {
+        defaultResponses = new ArrayList<>();
+           
+        defaultResponses.add("That is an interesting topic. Tell me more.");
+        defaultResponses.add("I'm not sure I understand. Can you explain furter?");
     }
     
 }
