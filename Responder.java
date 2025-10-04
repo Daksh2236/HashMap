@@ -35,10 +35,20 @@ public class Responder
      */
     public void fillResponseMap()
     {
+       String connection = "Is your printer switched on and properly connected?" ; 
+       String reboot = "Have you tried rebooting your machine?";
+       String speed = "Why do you think it is slow?";
+       
+       
        responseMap.put("problem", "We can help you with your problem.");
-       responseMap.put("slow", "Why do you think it is slow?");
-       responseMap.put("crash", "Have you tried rebooting your machine?");
-       responseMap.put("printer", "Is your printer switched on and properly connected?");
+       responseMap.put("slow", speed);
+       responseMap.put("lagging", speed);
+       
+       responseMap.put("crash", reboot);
+       responseMap.put("broken", reboot);
+       
+       responseMap.put("printer", connection);
+       responseMap.put("unplunged", connection);
     }
     
     public String pickDefaultResponse()
