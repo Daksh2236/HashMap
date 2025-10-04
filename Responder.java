@@ -29,17 +29,18 @@ public class Responder
      */
     public void fillResponseMap()
     {
-       responseMap.put("jess abc", "2");
-       responseMap.put("bob", "3");
-       responseMap.put("rick", "4");
+       responseMap.put("problem", "We can help you with your problem.");
+       responseMap.put("slow", "Why do you think it is slow?");
+       responseMap.put("crash", "Have you tried rebooting your machine?");
+       responseMap.put("printer", "Is your printer switched on and properly connected?");
     }
     
     public String pickDefaultResponse()
-    {
-
-        //System.out.println("pick a valid key");
-        return "pick a valid key";
-    }
+        {
+    
+            //System.out.println("pick a valid key");
+            return "please explain further";
+        }
     
     public String generateResponse(HashSet<String> words) {
         for (String word : words) {
