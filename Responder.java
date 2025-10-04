@@ -2,6 +2,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.ArrayList;
+import java.util.Set;
+
 /**
  * Write a description of class Responder here.
  *
@@ -62,15 +64,34 @@ public class Responder
         return response;
     }
     
-    public String generateResponse(HashSet<String> words) {
+     public String generateResponse(HashSet<String> words)
+    {
+        Set<String> matchedWords = new HashSet<>(); 
+        
+        String firstMatchResponse = null;
+
         for (String word : words) {
             if (responseMap.containsKey(word)) {
-                return responseMap.get(word);
+                if (firstMatchResponse == null) {
+                    firstMatchResponse = responseMap.get(word);
+                }
+                matchedWords.add(word); 
             }
         }
-        // None of the words recognized: return a random default response
-        return pickDefaultResponse();
+
+        int matchCount = matchedWords.size();
+        
+        if (matchCount > 1) {
+            return "several issues mentioned: " + matchedWords.toString() + ". Which is a priority";
+        }
+        else if (matchCount == 1) {
+            return firstMatchResponse; 
+        }
+        else {
+            return pickDefaultResponse();
+        }
     }
+
     
     private void fillDefaultResponses()
     {
